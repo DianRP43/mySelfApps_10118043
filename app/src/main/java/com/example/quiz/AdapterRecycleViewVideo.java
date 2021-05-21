@@ -53,7 +53,6 @@ public class AdapterRecycleViewVideo extends RecyclerView.Adapter<AdapterRecycle
         holder.textView.setText(SubjectValuesVideo[position]);
         holder.videoView.setVideoURI(Uri.parse(SubjectUrlVideo[position]));
 
-        holder.videoView.start();
         MediaController mc = new MediaController(contextVideo);
         mc.setAnchorView(holder.videoView);
         mc.setMediaPlayer(holder.videoView);

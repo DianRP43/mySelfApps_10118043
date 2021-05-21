@@ -9,12 +9,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 public class Music extends AppCompatActivity {
     Context contextVideo,context;
     RecyclerView recyclerViewVideo, recyclerViewMusic;
     RecyclerView.Adapter recyclerViewAdapterVideo,recyclerViewAdapterMusic;
     RecyclerView.LayoutManager recylerViewLayoutManagerVideo,recylerViewLayoutManagerMusic;
+    VideoView videoView;
     String[] subjectValuesVideo = {
             "Dat Stick","All of me","Till It Hurts"
     };
@@ -35,10 +38,10 @@ public class Music extends AppCompatActivity {
         };
         contextVideo = getApplicationContext();
         recyclerViewVideo = findViewById(R.id.recyclerViewVideo);
-        recylerViewLayoutManagerVideo = new LinearLayoutManager( contextVideo);
+        recylerViewLayoutManagerVideo = new LinearLayoutManager( this);
         //context,LinearLayoutManager.HORIZONTAL,false
         recyclerViewVideo.setLayoutManager(recylerViewLayoutManagerVideo);
-        recyclerViewAdapterVideo = new AdapterRecycleViewVideo(subjectValuesVideo,subjectUrlVideo,contextVideo);
+        recyclerViewAdapterVideo = new AdapterRecycleViewVideo(subjectValuesVideo,subjectUrlVideo,this);
         recyclerViewVideo.setAdapter(recyclerViewAdapterVideo);
 
         context = getApplicationContext();
@@ -48,6 +51,7 @@ public class Music extends AppCompatActivity {
         recyclerViewMusic.setLayoutManager(recylerViewLayoutManagerMusic);
         recyclerViewAdapterMusic = new AdapterRecycleViewMusic(subjectValuesMusic,context);
         recyclerViewMusic.setAdapter(recyclerViewAdapterMusic);
+
         //ass
         drawerLayout = findViewById(R.id.DrawerLayout);
     }
