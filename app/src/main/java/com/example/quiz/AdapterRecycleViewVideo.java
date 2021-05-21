@@ -20,7 +20,7 @@ public class AdapterRecycleViewVideo extends RecyclerView.Adapter<AdapterRecycle
     private String[] SubjectUrlVideo;
     private Context contextVideo;
 
-    public AdapterRecycleViewVideo(String[] subjectValuesVideo ,String[] subjectUrlVideo, Context contextVideo) {
+    public AdapterRecycleViewVideo(String[] subjectValuesVideo, String[] subjectUrlVideo, Context contextVideo) {
         SubjectValuesVideo = subjectValuesVideo;
         SubjectUrlVideo = subjectUrlVideo;
         this.contextVideo = contextVideo;
@@ -37,6 +37,7 @@ public class AdapterRecycleViewVideo extends RecyclerView.Adapter<AdapterRecycle
             textView = v.findViewById(R.id.TittleItem);
         }
     }
+
     @NonNull
     @Override
     public AdapterRecycleViewVideo.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -52,6 +53,11 @@ public class AdapterRecycleViewVideo extends RecyclerView.Adapter<AdapterRecycle
         holder.textView.setText(SubjectValuesVideo[position]);
         holder.videoView.setVideoURI(Uri.parse(SubjectUrlVideo[position]));
 
+        holder.videoView.start();
+        MediaController mc = new MediaController(contextVideo);
+        mc.setAnchorView(holder.videoView);
+        mc.setMediaPlayer(holder.videoView);
+        holder.videoView.setMediaController(mc);
     }
 
     @Override

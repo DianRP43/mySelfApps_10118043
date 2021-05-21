@@ -73,7 +73,7 @@ public class WalkThrough1 extends AppCompatActivity {
         item2.setImage(R.drawable.character2);
 
         OnBoardingItem item3 = new OnBoardingItem();
-        item3.setTittle("want to know who dian ?");
+        item3.setTittle("want to know dian ?");
         item3.setDescription("let's start !");
         item3.setImage(R.drawable.character3);
 
