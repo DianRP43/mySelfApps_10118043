@@ -1,30 +1,42 @@
 package com.example.quiz;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Profile extends AppCompatActivity {
 
-    Button email, instagram, location;
+    Button callme, instagram, location;
 
 
     DrawerLayout drawerLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         instagram = findViewById(R.id.btn_instagram);
-
-        instagram.setOnClickListener(new View.OnClickListener(){
+//        callme = findViewById(R.id.btn_callme);
+//        callme.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                callMe("tel:082118080393");
+//            }
+//        });
+        instagram.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
@@ -35,7 +47,7 @@ public class Profile extends AppCompatActivity {
 
         location = findViewById(R.id.btn_findme);
 
-        location.setOnClickListener(new View.OnClickListener(){
+        location.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
@@ -49,41 +61,47 @@ public class Profile extends AppCompatActivity {
 
     private void gotoUrl(String s) {
         Uri uri = Uri.parse(s);
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+        startActivity(new Intent(Intent.ACTION_VIEW, uri));
     }
 
-    public void ClickMenu(View view){
+    public void ClickMenu(View view) {
         //Open drawer
         HomeActivity.openDrawer(drawerLayout);
 
     }
-    public void ClickLogo(View view){
+
+    public void ClickLogo(View view) {
         HomeActivity.closeDrawer(drawerLayout);
     }
-    public void ClickHome(View view){
+
+    public void ClickHome(View view) {
         //redirect to home
-        HomeActivity.redirectActivity(this,HomeActivity.class);
-    }
-    public void ClickGallery(View view){
-        //redirect to gallery
-        HomeActivity.redirectActivity(this,Gallery.class);
+        HomeActivity.redirectActivity(this, HomeActivity.class);
     }
 
-    public void ClickDaily(View view){
+    public void ClickGallery(View view) {
         //redirect to gallery
-        HomeActivity.redirectActivity(this,Daily.class);
+        HomeActivity.redirectActivity(this, Gallery.class);
     }
-    public void ClickMusic(View view){
+
+    public void ClickDaily(View view) {
+        //redirect to gallery
+        HomeActivity.redirectActivity(this, Daily.class);
+    }
+
+    public void ClickMusic(View view) {
         //redirect to music
-        HomeActivity.redirectActivity(this,Music.class);
+        HomeActivity.redirectActivity(this, Music.class);
 
     }
-    public void ClickProfile(View view){
+
+    public void ClickProfile(View view) {
         //recreate
         recreate();
 
     }
-    public void ClickLogout(View view){
+
+    public void ClickLogout(View view) {
         //close
         HomeActivity.logout(this);
     }
@@ -95,7 +113,7 @@ public class Profile extends AppCompatActivity {
         HomeActivity.closeDrawer(drawerLayout);
     }
 
-    public void ClickAbout(View view){
+    public void ClickAbout(View view) {
         //redirect to Gallery
         About(this);
     }
@@ -121,11 +139,12 @@ public class Profile extends AppCompatActivity {
         //show dialog
         builder.show();
     }
-    public void onButtonTap(View v){
+
+    public void onButtonTap(View v) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"dianrosapratama2000@gmail.com"});
-        intent.putExtra(Intent.EXTRA_CC, new String[] {""});
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"dianrosapratama2000@gmail.com"});
+        intent.putExtra(Intent.EXTRA_CC, new String[]{""});
         intent.putExtra(Intent.EXTRA_SUBJECT, "");
         intent.putExtra(Intent.EXTRA_TEXT, "");
 
@@ -135,5 +154,17 @@ public class Profile extends AppCompatActivity {
             //do something else
         }
     }
-}
 
+    public void callClick(View view) {
+        Intent intentCall = new Intent(Intent.ACTION_CALL);
+        intentCall.setData(Uri.parse("tel:083822011677"));
+        if (ContextCompat.checkSelfPermission(Profile.this,
+                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(Profile.this,
+                    new String[]{Manifest.permission.CALL_PHONE}, 1);
+        } else {
+            startActivity(intentCall);
+        }
+    }
+}

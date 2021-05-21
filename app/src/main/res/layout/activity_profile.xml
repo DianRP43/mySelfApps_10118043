@@ -46,7 +46,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="100dp"
                             android:layout_marginTop="50dp"
-                            android:layout_centerHorizontal="true"
                             android:src="@drawable/myimage" />
 
                         <TextView
@@ -54,6 +53,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/image"
+                            android:layout_marginTop="1dp"
                             android:fontFamily="@font/bold"
                             android:text="Dian R. P"
                             android:textAlignment="center"
@@ -64,12 +64,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/name"
+                            android:layout_margin="5dp"
+                            android:layout_marginTop="22dp"
                             android:fontFamily="@font/regular"
                             android:text="10118043 IF-01 Universitas Komputer Indonesia"
                             android:textAlignment="center"
                             android:textColor="@color/Photo"
-                            android:layout_margin="5dp"
                             android:textSize="14sp" />
+
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -91,24 +93,12 @@
                             android:textAlignment="center"
                             android:textColor="@color/Primary"
                             android:textSize="20sp" />
-                        <TextView
-                            android:id="@+id/telp"
-                            android:layout_below="@+id/Contact"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/bold"
-                            android:layout_centerHorizontal="true"
-                            android:text="+6283860598866"
-                            android:textAlignment="center"
-                            android:textColor="@color/Primary"
-                            android:layout_marginBottom="20dp"
-                            />
                         <Button
                             android:id="@+id/btn_email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="15dp"
-                            android:layout_below="@id/telp"
+                            android:layout_below="@id/Contact"
                             android:text="Email"
                             android:onClick="onButtonTap"
                             android:textAllCaps="false"
@@ -124,6 +114,18 @@
                             android:textAllCaps="false"
                             android:textColor="@color/Icon"
                             android:background="@drawable/onboarding_indicator_active"/>
+                        <Button
+                            android:id="@+id/btn_callme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:layout_below="@id/btn_instagram"
+                            android:text="Call Me"
+                            android:textAllCaps="false"
+                            android:textColor="@color/Icon"
+                            android:background="@drawable/onboarding_indicator_active"
+                            android:onClick="callClick"
+                            />
                     </RelativeLayout>
                 </LinearLayout>
             </RelativeLayout>
@@ -217,6 +219,7 @@
                             android:backgroundTint="@color/Icon"
                             android:onClick="ClickAbout"
                             />
+
                     </RelativeLayout>
                 </LinearLayout>
             </RelativeLayout>
