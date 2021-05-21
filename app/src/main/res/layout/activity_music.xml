@@ -14,14 +14,77 @@
 
         <include layout="@layout/main_toolbar" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Music"
-            android:textSize="50sp"
-            android:gravity="center"
-            android:textColor="@color/Text"
-            />
+            android:background="@drawable/background2"
+            android:orientation="vertical"
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:background="@drawable/styleicon"
+                android:layout_margin="30dp"
+                android:backgroundTint="@color/Icon">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/video"
+                    android:text="Video"
+                    android:textColor="@color/Primary"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/bold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/recyclerViewVideo"
+                    android:layout_below="@id/video"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scrollbars="vertical"
+                    tools:listitem="@layout/list_video_item" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:background="@drawable/styleicon"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/Primary">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/daily_dailyActivity"
+                    android:text="Music"
+                    android:textColor="@color/Photo"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/bold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/recyclerView"
+                    android:layout_below="@id/daily_dailyActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scrollbars="vertical"
+                    tools:listitem="@layout/list_item" />
+
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
 
     <RelativeLayout

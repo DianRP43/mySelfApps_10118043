@@ -51,7 +51,7 @@
                 android:textAlignment="gravity"
                 android:textColor="@color/Primary"
 
-                android:textSize="14sp" />
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/potoprofile"
@@ -148,8 +148,9 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/regular"
                 android:text="Nasi goreng"
+                android:textAlignment="center"
                 android:textColor="@color/Photo"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/home_hobby_fuyunghai"
@@ -161,8 +162,9 @@
                 android:layout_toRightOf="@id/home_hobby_nasgor"
                 android:fontFamily="@font/regular"
                 android:text="Fu Yunghai"
+                android:textAlignment="center"
                 android:textColor="@color/Photo"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/home_hobby_bananaMilk"
@@ -174,8 +176,9 @@
                 android:layout_toRightOf="@id/home_hobby_fuyunghai"
                 android:fontFamily="@font/regular"
                 android:text="Banana Milk"
+                android:textAlignment="center"
                 android:textColor="@color/Photo"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
@@ -188,7 +191,7 @@
             android:layout_marginBottom="30dp"
             android:background="@drawable/styleicon"
             android:backgroundTint="@color/Primary"
-            android:padding="20dp">
+            android:padding="16sp">
 
             <TextView
                 android:id="@+id/home_hobby_citacita"
@@ -208,7 +211,8 @@
                 android:fontFamily="@font/regular"
                 android:text="Politics"
                 android:textColor="@color/Photo"
-                android:textSize="20sp" />
+                android:textSize="18sp"
+                android:textAlignment="center"/>
 
             <TextView
                 android:id="@+id/home_hobby_design"
@@ -221,7 +225,8 @@
                 android:fontFamily="@font/regular"
                 android:text="Desgin"
                 android:textColor="@color/Photo"
-                android:textSize="20sp" />
+                android:textSize="18sp"
+                android:textAlignment="center"/>
 
             <TextView
                 android:id="@+id/home_hobby_citacitaku"
@@ -234,7 +239,8 @@
                 android:fontFamily="@font/regular"
                 android:text="Entrepreneur"
                 android:textColor="@color/Photo"
-                android:textSize="20sp" />
+                android:textSize="18sp"
+                android:textAlignment="center"/>
 
         </RelativeLayout>
     </LinearLayout>

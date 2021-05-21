@@ -2,17 +2,37 @@ package com.example.quiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
 public class Music extends AppCompatActivity {
-
+    Context contextVideo;
+    RecyclerView recyclerViewVideo;
+    RecyclerView.Adapter recyclerViewAdapterVideo;
+    RecyclerView.LayoutManager recylerViewLayoutManagerVideo;
+    String[] subjectValuesVideo = {
+            "Video1"
+    };
+    String[] subjectUrlVideo = {
+            "android.resource://"+ getPackageName() +"/" + R.raw.video2
+    };
     DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
+
+        contextVideo = getApplicationContext();
+        recyclerViewVideo = findViewById(R.id.recyclerViewVideo);
+        recylerViewLayoutManagerVideo = new LinearLayoutManager(contextVideo);
+        //context,LinearLayoutManager.HORIZONTAL,false
+        recyclerViewVideo.setLayoutManager(recylerViewLayoutManagerVideo);
+        recyclerViewAdapterVideo = new AdapterRecycleViewVideo(subjectValuesVideo,subjectUrlVideo,contextVideo );
+        recyclerViewVideo.setAdapter(recyclerViewAdapterVideo);
         //ass
         drawerLayout = findViewById(R.id.DrawerLayout);
     }

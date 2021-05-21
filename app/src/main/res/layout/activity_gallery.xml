@@ -15,14 +15,41 @@
 
         <include layout="@layout/main_toolbar" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Gallery"
-            android:textSize="50sp"
-            android:gravity="center"
-            android:textColor="@color/Text"
-            />
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="30dp"
+                android:background="@drawable/styleicon"
+                android:backgroundTint="@color/Icon"
+                android:padding="30dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/gallery"
+                    android:text="Gallery"
+                    android:textColor="@color/Primary"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/bold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/recyclerViewGallery"
+                    android:layout_below="@id/gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:scrollbars="vertical"
+                    tools:listitem="@layout/list_gallery_item" />
+
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
 
     <RelativeLayout

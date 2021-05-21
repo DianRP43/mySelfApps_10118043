@@ -2,18 +2,45 @@ package com.example.quiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
 public class Gallery extends AppCompatActivity {
+    Context contextGallery;
+    RecyclerView recyclerViewGallery;
+    RecyclerView.Adapter recyclerViewAdapterGallery;
+    RecyclerView.LayoutManager recylerViewLayoutManagerGallery;
+    String[] subjectsGallery = {
+            "Poto1", "Poto2", "Poto3","Poto4", "Poto5", "Poto6","Poto7", "Poto8", "Poto9"
+    };
+    int[] subjectImageGallery={
+            R.drawable.gallery1,R.drawable.gallery2,
+            R.drawable.gallery3,
 
+            R.drawable.gallery4,R.drawable.gallery5,
+            R.drawable.gallery6,
+
+            R.drawable.gallery7,R.drawable.gallery8,
+            R.drawable.gallery9
+    };
     DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gallery);
 
+        setContentView(R.layout.activity_gallery);
+        contextGallery = getApplicationContext();
+        recyclerViewGallery = findViewById(R.id.recyclerViewGallery);
+        recylerViewLayoutManagerGallery = new GridLayoutManager( contextGallery, 2);
+        //context,LinearLayoutManager.HORIZONTAL,false
+        recyclerViewGallery.setLayoutManager(recylerViewLayoutManagerGallery);
+        recyclerViewAdapterGallery = new AdapterRecyclerViewGallery(subjectsGallery, subjectImageGallery,contextGallery );
+        recyclerViewGallery.setAdapter(recyclerViewAdapterGallery);
         //ass
         drawerLayout = findViewById(R.id.DrawerLayout);
     }
