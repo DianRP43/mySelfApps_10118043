@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Profile extends AppCompatActivity {
-
+    //(21 Mei 2021, 10118043, Dian Rosa Pratama, IF-01)
     Button callme, instagram, location;
 
 

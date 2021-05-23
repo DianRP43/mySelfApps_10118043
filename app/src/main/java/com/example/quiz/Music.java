@@ -13,6 +13,7 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class Music extends AppCompatActivity {
+    //(20 Mei 2021, 10118043, Dian Rosa Pratama, IF-01)
     Context contextVideo, context;
     RecyclerView recyclerViewVideo, recyclerViewMusic;
     RecyclerView.Adapter recyclerViewAdapterVideo, recyclerViewAdapterMusic;

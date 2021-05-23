@@ -15,7 +15,8 @@ import android.widget.RelativeLayout;
 
 
 public class Daily extends AppCompatActivity {
-    //inisialisasi
+
+    //(18 Mei 2021, 10118043, Dian Rosa Pratama, IF-01)
     DrawerLayout drawerLayout;
     Context context, contextFriend;
     RecyclerView recyclerView, recyclerViewFriend;

@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class AdapterRecyclerViewFriend extends RecyclerView.Adapter<AdapterRecyclerViewFriend.ViewHolder> {
-
+    //(18 Mei 2021, 10118043, Dian Rosa Pratama, IF-01)
     private String[] SubjectValuesFriend;
     private int[] SubjectValuesImageFriend;
     private Context contextFriend;

@@ -13,7 +13,7 @@ import android.view.Gravity;
 import android.view.View;
 
 public class HomeActivity extends AppCompatActivity {
-
+    //(17 Mei 2021, 10118043, Dian Rosa Pratama, IF-01)
     DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

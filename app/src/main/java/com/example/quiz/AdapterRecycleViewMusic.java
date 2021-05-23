@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import javax.security.auth.Subject;
 
 public class AdapterRecycleViewMusic  extends RecyclerView.Adapter<AdapterRecycleViewMusic.ViewHolder> {
+    //(20 Mei 2021, 10118043, Dian Rosa Pratama, IF-01)
+
     private String[] SubjectMusic;
     private Context context;
     public AdapterRecycleViewMusic(String[] subjectMusic, Context context) {

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class OnBoardingAdapter extends  RecyclerView.Adapter<OnBoardingAdapter.OnBoardingViewHolder> {
-
+    //(16 Mei 2021, 10118043, Dian Rosa Pratama, IF-01)
     private List<OnBoardingItem> onBoardingItemList;
 
     public OnBoardingAdapter(List<OnBoardingItem> onBoardingItemList) {

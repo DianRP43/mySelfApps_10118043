@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.net.URI;
 
 public class AdapterRecycleViewVideo extends RecyclerView.Adapter<AdapterRecycleViewVideo.ViewHolder> {
+    //(20 Mei 2021, 10118043, Dian Rosa Pratama, IF-01)
     private String[] SubjectValuesVideo;
     private String[] SubjectUrlVideo;
     private Context contextVideo;

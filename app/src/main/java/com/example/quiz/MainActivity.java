@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    //(15 Mei 2021, 10118043, Dian Rosa Pratama, IF-01)
     private static  int SPLASH_SCREEN = 4000;
 // variables
     Animation topAnim, botAnim;

@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class AdapterRecyclerViewGallery extends RecyclerView.Adapter<AdapterRecyclerViewGallery.ViewHolder>  {
-
+    //(19 Mei 2021, 10118043, Dian Rosa Pratama, IF-01)
     private String[] SubjectValuesGallery;
     private int[] SubjectValuesImageGallery;
     private Context contextGallery;

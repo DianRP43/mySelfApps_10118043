@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WalkThrough1 extends AppCompatActivity {
-
+    //(16 Mei 2021, 10118043, Dian Rosa Pratama, IF-01)
     private OnBoardingAdapter onBoardingAdapter;
     private LinearLayout LayoutOnBoardingIndicators;
     private Button OnBoardingAction;

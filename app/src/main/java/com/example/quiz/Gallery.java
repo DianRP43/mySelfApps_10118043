@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class Gallery extends AppCompatActivity {
+    //(19 Mei 2021, 10118043, Dian Rosa Pratama, IF-01)
     Context contextGallery;
     RecyclerView recyclerViewGallery;
     RecyclerView.Adapter recyclerViewAdapterGallery;
